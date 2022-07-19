@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+/*import 'bootstrap/dist/css/bootstrap.min.css';*/
 
 function App() {
   const name = 'CHAMAMA'
   return (
     <div className="App">
       <header className="App-header">
+        <NavBar/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {name}
@@ -24,3 +27,5 @@ function App() {
 }
 
 export default App;
+
+
