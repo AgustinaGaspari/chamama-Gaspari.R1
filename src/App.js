@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const name = 'CHAMAMA'
@@ -9,6 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar/>
+        
+        <ItemListContainer greeting='Bienvenido'/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {name}
