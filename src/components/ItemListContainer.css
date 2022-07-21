@@ -1,0 +1,12 @@
+
+.saludar {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 100px;
+    
+}
+
+#hiBtn {
+    background-color: blueviolet;
+    border: 5px solid blueviolet;
+    border-radius: 20px;
+}

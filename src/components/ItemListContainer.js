@@ -1,10 +1,11 @@
+import './ItemListContainer.css';
 import Button from "react-bootstrap/esm/Button";
 
 
 const greeting=()=> {
     return(
-        <div className="Saludar">
-            <Button callback ={greeting}>
+        <div className="saludar">
+            <Button id="hiBtn" callback ={greeting}>
                 <h1>
                     BIENVENIDO
                 </h1>

@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar/>
-        
         <ItemListContainer greeting='Bienvenido'/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
