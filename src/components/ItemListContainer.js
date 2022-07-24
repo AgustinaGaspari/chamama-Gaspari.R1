@@ -2,10 +2,10 @@ import './ItemListContainer.css';
 import Button from "react-bootstrap/esm/Button";
 
 
-const greeting=()=> {
+const ItemListContainer=()=> {
     return(
         <div className="saludar">
-            <Button id="hiBtn" callback ={greeting}>
+            <Button id="hiBtn" callback ={ItemListContainer}>
                 <h1>
                     BIENVENIDO
                 </h1>
@@ -13,4 +13,4 @@ const greeting=()=> {
         </div>
     )
 }
-export default greeting;
+export default ItemListContainer;

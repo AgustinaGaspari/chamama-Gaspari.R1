@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar/>
-        <ItemListContainer greeting='Bienvenido'/>
+        <ItemListContainer ItemListContainer='Bienvenido'/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {name}
