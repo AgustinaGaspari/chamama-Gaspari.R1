@@ -8,6 +8,7 @@ import CardWidget from './CardWidget';
 
 
 function BasicExample() {
+  console.log('me renderice soy NavBar')
   return (
     <Navbar bg="light" expand="lg" className="menu">
       <Container className="contenedor">
