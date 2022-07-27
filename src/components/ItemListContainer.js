@@ -1,19 +1,43 @@
 import './ItemListContainer.css';
-import ItemCount from './ItemCount';
+//import ItemCount from './ItemCount';
+import { useEffect, useState } from 'react';
+import ItemList from './ItemList';
+import {data} from '../mock/Data'
+
 
 const ItemListContainer=(props)=> {
     
-    const onAdd=(cantidad)=>{
-        if (cantidad !=0) {
-            console.log(`Agregaste ${cantidad} productos al carrito`)
-        }
-    }
+    const [listaProductos, setListaProductos] = useState([])
+    
+    const[mensaje, setMensaje] = useState(false)
+    
+    const [loading, setLoading] = useState(true)
+    
+    
+
+    useEffect(()=>{
+        console.log ('soy el use effect') 
+        data
+        .then((res)=> setListaProductos(res))
+        .catch(()=> setMensaje('Error, intente mas tarde'))
+        .finally(()=> setLoading(false))
+    },[])
+
+    //console.log(listaProductos)
+    
 
     return(
         <div className="saludar">
-           <h2 id="hi">{props.greeting}</h2>
-           
-           <ItemCount initial={0} stock={30} onAdd={onAdd}/>
+            <h2 id="hi">{props.greeting}</h2>
+
+            {mensaje && <p>{mensaje}</p>}
+
+            {loading ? <p>Cargando...</p> : <ItemList listaProductos={listaProductos}/>}
+
+            {listaProductos.map((producto)=> <p key={producto.id}>{producto.name}</p>)}
+
+            {/*<ItemCount initial={0} stock={30} onAdd={onAdd}/>*/}
+            
         </div>
     )
 }
