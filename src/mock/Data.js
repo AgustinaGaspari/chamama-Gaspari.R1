@@ -19,7 +19,7 @@ export const data = new Promise((resolve, reject) =>{
         if(condition){
             resolve(productos)
         }else {
-            reject ('salio mal no hay sushi')
+            reject ('Error, algo salio mal')
         }
     },2000)
 })

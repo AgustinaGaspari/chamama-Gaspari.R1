@@ -14,7 +14,6 @@ const ItemListContainer=(props)=> {
     const [loading, setLoading] = useState(true)
     
     
-
     useEffect(()=>{
         console.log ('soy el use effect') 
         data
@@ -22,9 +21,7 @@ const ItemListContainer=(props)=> {
         .catch(()=> setMensaje('Error, intente mas tarde'))
         .finally(()=> setLoading(false))
     },[])
-
-    //console.log(listaProductos)
-    
+  
 
     return(
         <div className="saludar">
@@ -33,8 +30,6 @@ const ItemListContainer=(props)=> {
             {mensaje && <p>{mensaje}</p>}
 
             {loading ? <p>Cargando...</p> : <ItemList listaProductos={listaProductos}/>}
-
-            {listaProductos.map((producto)=> <p key={producto.id}>{producto.name}</p>)}
 
             {/*<ItemCount initial={0} stock={30} onAdd={onAdd}/>*/}
             
