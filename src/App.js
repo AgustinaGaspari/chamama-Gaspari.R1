@@ -1,29 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
-  const name = 'CHAMAMA'
+  
   return (
     <div className="App">
       <header className="App-header">
+        <h1>CHAMAMA</h1>
         <NavBar/>
-        <ItemListContainer greeting= 'BIENVENIDO'/>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {name}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ItemListContainer greeting= 'BIENVENIDO A TIENDA CHAMAMA - REINVENTANDO LA BASURA'/>
+        <ItemDetailContainer/>
       </header>
     </div>
   );

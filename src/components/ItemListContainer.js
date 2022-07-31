@@ -2,7 +2,7 @@ import './ItemListContainer.css';
 //import ItemCount from './ItemCount';
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import {data} from '../mock/Data'
+import {data} from '../mock/Data';
 
 
 const ItemListContainer=(props)=> {
@@ -18,7 +18,7 @@ const ItemListContainer=(props)=> {
         console.log ('soy el use effect') 
         data
         .then((res)=> setListaProductos(res))
-        .catch(()=> setMensaje('Error, intente mas tarde'))
+        .catch(()=> setMensaje('Error, intente más tarde'))
         .finally(()=> setLoading(false))
     },[])
   
@@ -28,8 +28,8 @@ const ItemListContainer=(props)=> {
             <h2 id="hi">{props.greeting}</h2>
 
             {mensaje && <p>{mensaje}</p>}
-
-            {loading ? <p>Cargando...</p> : <ItemList listaProductos={listaProductos}/>}
+            
+            {loading ? <p>Cargando productos...</p> : <ItemList listaProductos={listaProductos}/>}
 
             {/*<ItemCount initial={0} stock={30} onAdd={onAdd}/>*/}
             

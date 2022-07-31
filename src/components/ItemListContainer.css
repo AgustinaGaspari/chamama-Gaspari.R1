@@ -1,5 +1,6 @@
 
 .saludar {
+    color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
     margin:10px;
@@ -8,8 +9,8 @@
 
 #hi {
     margin: 10px;
-    background-color: blueviolet;
-    border: 5px solid blueviolet;
+    background-color: #fcd116;
+    border: 5px solid #fcd116;
     border-radius: 10px;
 }
 #buy{
