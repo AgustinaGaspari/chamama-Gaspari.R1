@@ -14,17 +14,21 @@ const Item = ({producto})=>{
     }
 
     return(
-        <Link to={`/item/${id}`}>
-            <div style={{ width: '18rem' }}>
-                <img src={producto.img} className= "car-img-top img-fluid" alt={producto.name} />
-                <div className="card-body">
-                    <h3 className="card-title">{producto.name}</h3>
-                    <p className="card-text"> Precio: ${producto.price} </p>
-                    <p className="card-text"> Unidades en stock: {producto.stock} </p>
-                    <ItemCount initial={0} stock={stock} onAdd={onAdd}/>
+        <div>
+            <Link to={`/item/${id}`}>
+                <div style={{ width: '18rem' }}>
+                    <img src={producto.img} className= "car-img-top img-fluid" alt={producto.name} />
+                    <div className="card-body">
+                        <h3 className="card-title">{producto.name}</h3>
+                        <p className="card-text"> Precio: ${producto.price} </p>
+                        <p className="card-text"> Unidades en stock: {producto.stock} </p>
+                        
+                    </div>
                 </div>
-            </div>
-        </Link>
+            </Link>
+            <ItemCount initial={0} stock={stock} onAdd={onAdd}/>
+        </div>
+    
     )
 }
 

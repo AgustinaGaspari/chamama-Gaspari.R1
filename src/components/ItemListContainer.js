@@ -22,12 +22,12 @@ const ItemListContainer=(props)=> {
         data
         .then((res)=> {
             if(category) {
-                setListaProductos(res.filter((product)=> product.categoria=category))
+                setListaProductos(res.filter((product)=> product.categoria===category))
             } else {
                 setListaProductos(res);
             }
         })
-        .catch((err)=> setMensaje('Error, intente más tarde'))
+        .catch((err)=> setMensaje(alert('Error, intente más tarde')))
         .finally(()=> setLoading(false))
     },[category]);
   
