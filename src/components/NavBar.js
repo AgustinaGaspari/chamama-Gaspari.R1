@@ -12,12 +12,15 @@ function BasicExample() {
   return (
     <Navbar bg="light" expand="lg" className="menu">
       <Container className="contenedor">
-        <Navbar.Brand className="tienda" href="#home">TIENDA CHAMAMA <CardWidget id="carrito"/> </Navbar.Brand>
+        <Navbar.Brand className="tienda">
+          <Link to={"/"}>TIENDA CHAMAMA <CardWidget id="carrito"/> </Link> 
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">HOME</Nav.Link>
-            <Nav.Link href="#link">CONOCENOS</Nav.Link>
+            <Nav.Link>
+              <Link to={"/"}>HOME</Link>
+            </Nav.Link>
             <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
               <NavDropdown.Item id="producto1">
                <Link to={"/category/bolsos"}>BOLSOS</Link>
