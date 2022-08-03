@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CardWidget from './CardWidget';
-
+import {Link} from "react-router-dom";
 
 function BasicExample() {
   console.log('me renderice soy NavBar')
@@ -19,10 +19,18 @@ function BasicExample() {
             <Nav.Link href="#home">HOME</Nav.Link>
             <Nav.Link href="#link">CONOCENOS</Nav.Link>
             <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1" id="producto1">BOLSOS</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2" id="producto2"> BILLETERAS</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3" id="producto3">TABAQUERAS</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4" id="producto4">BANDOLERAS</NavDropdown.Item>
+              <NavDropdown.Item id="producto1">
+               <Link to={"/category/bolsos"}>BOLSOS</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item id="producto2">
+                <Link to={"/category/billeteras"}>BILLETERAS</Link>
+              </NavDropdown.Item> 
+              <NavDropdown.Item id="producto3">
+                <Link to={"/category/tabaqueras"}>TABAQUERAS</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item id="producto4">
+                <Link to={"/category/rinoneras"}>RIÑONERAS</Link>
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

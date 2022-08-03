@@ -9,7 +9,7 @@ const ItemDetail =({item})=>{
 
     const onAdd=(cantidad)=>{
         if (cantidad !=0) {
-            setMensaje(`Agregaste ${cantidad} productos al carrito`)
+            setMensaje(alert(`Agregaste ${cantidad} productos al carrito`))
         }
     }
 
@@ -20,7 +20,7 @@ const ItemDetail =({item})=>{
             <img src={item.img} className= "car-img-top img-fluid" alt={item.name}/>
             <p className="card-text"> Precio: $ {item.price} </p>
             <p className="card-text"> Unidades en stock: {item.stock} </p>
-            <ItemCount  initial={0} stock={stock} onAdd={onAdd} key={id}/>
+            <ItemCount  initial={0} stock={stock} onAdd={onAdd} />
         </div>
         
     )

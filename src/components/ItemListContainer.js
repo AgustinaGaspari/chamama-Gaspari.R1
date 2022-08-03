@@ -1,9 +1,9 @@
 import './ItemListContainer.css';
 //import ItemCount from './ItemCount';
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import ItemList from './ItemList';
 import {data} from '../mock/Data';
-
+import {useParams} from "react-router-dom";
 
 const ItemListContainer=(props)=> {
     
@@ -13,14 +13,23 @@ const ItemListContainer=(props)=> {
     
     const [loading, setLoading] = useState(true)
     
+    const {category} = useParams();
+
+    console.log(category);
     
     useEffect(()=>{
         console.log ('soy el use effect') 
         data
-        .then((res)=> setListaProductos(res))
-        .catch(()=> setMensaje('Error, intente más tarde'))
+        .then((res)=> {
+            if(category) {
+                setListaProductos(res.filter((product)=> product.categoria=category))
+            } else {
+                setListaProductos(res);
+            }
+        })
+        .catch((err)=> setMensaje('Error, intente más tarde'))
         .finally(()=> setLoading(false))
-    },[])
+    },[category]);
   
 
     return(
