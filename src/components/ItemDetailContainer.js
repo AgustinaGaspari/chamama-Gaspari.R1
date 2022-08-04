@@ -7,7 +7,7 @@ import {useParams} from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
 
-    const [item, setItem]= useState()
+    const [item, setItem]= useState({})
     const[mensaje, setMensaje] = useState(false)
     const [loading, setLoading] = useState(true)
     const {id} = useParams();
@@ -17,20 +17,17 @@ const ItemDetailContainer = ()=>{
         console.log ('soy el use effect') 
         data
         .then((res)=> {
-            if (id) {
-                setItem(res.filter((product)=> product.id===parseInt(id)[0]))
-            }else {
-                setItem (res);
-            }
+                setItem(res.find((product)=> product.id===id))
+            
         })
         .catch(()=> setMensaje ('Error, intente más tarde'))
         .finally(()=> setLoading(false))
-    },[id]) 
+    },[id]) ;
 
     return(
         <div>
             <h1 id="detail">DETALLE DE PRODUCTO</h1>
-            <ItemDetail item={data}/>
+            {item && <ItemDetail item={item}/>}
         </div>
     )
 }
