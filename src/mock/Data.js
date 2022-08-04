@@ -43,7 +43,7 @@ const productos = [
 
     {id:'06', 
     name: 'Riñonera PLANA',
-    category:'riñoneras', 
+    category:'rinoneras', 
     description: 'Riñonera plana reciclada. Material: BLACKOUT. Costuras y cierres reforzados.', 
     price: 3000, 
     stock: 20, 
@@ -51,7 +51,7 @@ const productos = [
 
     {id:'07', 
     name: 'Riño QUE', 
-    category:'riñoneras',
+    category:'rinoneras',
     description: 'Riñonera reciclada. Material: BLACKOUT y CÁMARA DE VEHICULOS. Costuras y cierre reforzado; bolsillo frontal y compartimento interno; correas desmontables y regulables.', 
     price: 3500, 
     stock: 15, 
@@ -59,7 +59,7 @@ const productos = [
 
     {id:'08', 
     name: 'Tabaquera',
-    category:'tabaquera', 
+    category:'tabaqueras', 
     description: 'Tabaquera reciclada. Material: CÁMARA DE VEHICULOS. Costuras reforzadas', 
     price: 2500, 
     stock: 5, 

@@ -12,14 +12,13 @@ const ItemDetailContainer = ()=>{
     const [loading, setLoading] = useState(true)
     const {id} = useParams();
     
-    
    
     useEffect(()=>{
         console.log ('soy el use effect') 
         data
         .then((res)=> {
             if (id) {
-                setItem(res.filter((product)=> product.id=id))
+                setItem(res.filter((product)=> product.id===parseInt(id)[0]))
             }else {
                 setItem (res);
             }

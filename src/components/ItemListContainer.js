@@ -22,7 +22,7 @@ const ItemListContainer=(props)=> {
         data
         .then((res)=> {
             if(category) {
-                setListaProductos(res.filter((product)=> product.categoria===category))
+                setListaProductos(res.filter((product)=> product.category===category))
             } else {
                 setListaProductos(res);
             }
