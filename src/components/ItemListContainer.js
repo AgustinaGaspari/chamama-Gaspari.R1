@@ -15,7 +15,6 @@ const ItemListContainer=(props)=> {
     
     const {category} = useParams();
 
-    console.log(category);
     
     useEffect(()=>{
         console.log ('soy el use effect') 

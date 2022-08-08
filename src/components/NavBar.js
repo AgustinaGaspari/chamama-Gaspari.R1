@@ -13,14 +13,14 @@ function BasicExample() {
     <Navbar bg="light" expand="lg" className="menu">
       <Container className="contenedor">
         <Navbar.Brand className="tienda">
-          <Link to={"/"}>TIENDA CHAMAMA <CardWidget id="carrito"/> </Link> 
+          TIENDA CHAMAMA  
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>
+            <Nav>
               <Link to={"/"}>HOME</Link>
-            </Nav.Link>
+            </Nav>
             <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
               <NavDropdown.Item id="producto1">
                <Link to={"/category/bolsos"}>BOLSOS</Link>
@@ -37,6 +37,7 @@ function BasicExample() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <CardWidget id="carrito"/>
       </Container>
       
     </Navbar>
