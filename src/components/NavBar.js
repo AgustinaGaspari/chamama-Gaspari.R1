@@ -37,7 +37,7 @@ function BasicExample() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <CardWidget id="carrito"/>
+        <Link to={"/cart"}><CardWidget id="carrito"/>MIS COMPRAS </Link>
       </Container>
       
     </Navbar>

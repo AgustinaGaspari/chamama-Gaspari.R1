@@ -4,9 +4,10 @@ import { CartContext } from '../context/CartContext';
 
 
 const CardWidget =()=>{
-    const {cantInCart}= useContext(CartContext)
+    const valueToShare = useContext(CartContext)
+    
     return (
-        <BiCart>{cantInCart}</BiCart>
+        <BiCart>{valueToShare.cantInCart}</BiCart>
     );
 }
 

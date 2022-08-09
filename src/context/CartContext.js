@@ -49,7 +49,21 @@ const CartProvider = ({children}) => {
         }
     }
 
-    const removeToCart=()=>{}
+    const removeToCart=(itemToQuit)=>{
+        const inCart = cart.find((itemInTheCart) => itemInTheCart.id === itemToQuit.id)
+        if(inCart.quantity===1){
+            setCart(cart.filter((itemInTheCart)=>itemInTheCart.id !== itemToQuit.id))
+        }else{
+            setCart((itemInTheCart)=>{
+                if(itemInTheCart.id === itemToQuit.id){
+                    return {...inCart, quantity:inCart.quantity -1}
+                }else {
+                    return itemInTheCart
+                }
+            })
+        }
+        console.log(inCart)
+    }
 
     const valueToShare={
         cart, isInCart, cleanCart, addToCart, removeToCart, cantInCart: cart.length,
