@@ -8,8 +8,9 @@ const CartProvider = ({children}) => {
     const [cart, setCart]= useState([])
 
     const isInCart= ()=>{
-        
+           
     }
+    
 
     const cleanCart=()=>{
         setCart([])
@@ -76,7 +77,6 @@ const CartProvider = ({children}) => {
             {children}
         </CartContext.Provider>
     )
-
 
 }
 export default CartProvider
