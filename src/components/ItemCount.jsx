@@ -29,9 +29,9 @@ const ItemCount =({initial, stock, onAdd})=>{
         <>
         <Stack direction="vertical" gap={2} style={{alignSelf:'center'}}>
             <div >
-                <Button variant="outline-secondary" onClick={restar} > - </Button>
+                <Button variant="outline-secondary" disabled = {contador<=1} onClick={restar} > - </Button>
                 <span className="numContador"> {contador} </span>
-                <Button variant="outline-secondary" onClick={sumar} > + </Button>
+                <Button variant="outline-secondary" disabled = {contador>=stock} onClick={sumar} > + </Button>
             </div>
             <div>
                 <Button variant="secondary" onClick={()=>onAdd(contador)}>Agregar al carrito</Button>
