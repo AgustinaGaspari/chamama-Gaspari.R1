@@ -6,8 +6,16 @@ import { CartContext } from '../context/CartContext';
 const CardWidget =()=>{
     const valueToShare = useContext(CartContext)
     
+    if (valueToShare.cantInCart===0){
+        return <></>
+    }
+
     return (
-        <BiCart>{valueToShare.cantInCart}</BiCart>
+        <>
+        <BiCart/>
+        <p>{valueToShare.cantInCart}</p>
+        </>
+       
     );
 }
 

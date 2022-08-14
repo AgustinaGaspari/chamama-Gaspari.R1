@@ -7,10 +7,7 @@ export const CartContext= createContext({});
 const CartProvider = ({children}) => {
     const [cart, setCart]= useState([])
 
-    const isInCart= ()=>{
-           
-    }
-    
+   
 
     const cleanCart=()=>{
         setCart([])
@@ -40,7 +37,9 @@ const CartProvider = ({children}) => {
 
             cartDraft[itemDuplicateIndex] = itemToUpdate
             setCart(cartDraft)
+
         }else{
+
             const itemToAdd={
                 ...item,
                 quantity: quantity
@@ -52,24 +51,39 @@ const CartProvider = ({children}) => {
         }
     }
 
-    const removeToCart=(itemToQuit)=>{
-        const inCart = cart.find((itemInTheCart) => itemInTheCart.id === itemToQuit.id)
+    const isInCart= (item)=>{cart.some((itemIn)=> itemIn.id === item.id)}
+    if (isInCart===true){
+        addToCart()
+        
+    }
+    
+
+
+    const removeToCart=(itemToQuit,item, quantity)=>{
+        let inCart = cart.find((item) => item.id === itemToQuit.id)
         if(inCart.quantity===1){
-            setCart(cart.filter((itemInTheCart)=>itemInTheCart.id !== itemToQuit.id))
-        }else{
-            setCart((itemInTheCart)=>{
-                if(itemInTheCart.id === itemToQuit.id){
-                    return {...inCart, quantity:inCart.quantity -1}
-                }else {
-                    return itemInTheCart
-                }
-            })
-        }
+            const cartWithoutItem = cart.filter((item)=>item.id !== itemToQuit.id)
+            console.log(cartWithoutItem)
+            setCart(cartWithoutItem)
+            
+        }else {
+            const cartWithLessItem= {...item, quantity:cart[inCart].quantity - quantity}  
+            
+            setCart([cartWithLessItem])
+            return 
+        }  
+                
         console.log(inCart)
     }
 
+    let cantInCart= 0
+
+    cart.forEach((item)=>{
+        cantInCart+=item.quantity
+    })
+
     const valueToShare={
-        cart, isInCart, cleanCart, addToCart, removeToCart, cantInCart: cart.length,
+        cart, isInCart, cleanCart, addToCart, removeToCart, cantInCart,
     }
 
     return(

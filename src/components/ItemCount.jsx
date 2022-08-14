@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
+
 const ItemCount =({initial, stock, onAdd})=>{
     
     const navigate = useNavigate()
     const [contador, setContador] = useState(initial)
-    
+
+
     console.log('me renderice')
 
     const sumar=()=>{
@@ -25,6 +27,9 @@ const ItemCount =({initial, stock, onAdd})=>{
     function goToCart(){
         navigate('/cart')
     }
+    
+    
+
     return(
         <>
         <Stack direction="vertical" gap={2} style={{alignSelf:'center'}}>
@@ -35,6 +40,7 @@ const ItemCount =({initial, stock, onAdd})=>{
             </div>
             <div>
                 <Button variant="secondary" onClick={()=>onAdd(contador)}>Agregar al carrito</Button>
+
                 <Button variant="secondary" onClick={goToCart}>Finalizar Compra</Button>
             </div>
         </Stack>
