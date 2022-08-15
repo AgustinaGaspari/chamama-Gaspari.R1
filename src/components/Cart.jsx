@@ -1,11 +1,11 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { CartContext } from '../context/CartContext';
 
 
 
 const ItemCart =({item})=>{
     const {removeToCart} = useContext (CartContext);
-    const {totalPrice}= useContext(CartContext)
+
    
     return (
         <>
