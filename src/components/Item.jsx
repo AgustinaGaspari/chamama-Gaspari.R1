@@ -14,13 +14,12 @@ const Item = ({producto})=>{
 
     return(
         <>
-        
             <Link to={`/item/${id}`}>
-                <div style={{ width: '18rem' }}>
-                    <img src={producto.img} className= "car-img-top img-fluid" alt={producto.name} />
+                <div style={{ width: '18rem' }}> 
                     <div className="card-body">
                         <h3 className="card-title">{producto.name}</h3>
                     </div>
+                    <img src={producto.img} className= "car-img-top img-fluid" alt={producto.name} />
                 </div>
             </Link>
             <div>

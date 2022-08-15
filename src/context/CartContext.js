@@ -4,10 +4,9 @@ import ItemCount from "../components/ItemCount";
 
 export const CartContext= createContext({});
 
+
 const CartProvider = ({children}) => {
     const [cart, setCart]= useState([])
-
-   
 
     const cleanCart=()=>{
         setCart([])
@@ -51,29 +50,21 @@ const CartProvider = ({children}) => {
         }
     }
 
-    const isInCart= (item)=>{cart.some((itemIn)=> itemIn.id === item.id)}
-    if (isInCart===true){
-        addToCart()
-        
-    }
+    const isInCart= (id)=> cart.find((item)=> item.id === id)? true : false            
     
+    const totalPrice = ()=>{
+        return (
+            cart.reduce((prev, act)=> prev + act.quantity*act.price , 0)
+        )
+    }
 
+   /* const totalProducts = ()=>{
+        cart.reduce((accum, itemAct)=> accum + itemAct.quantity, 0)
+    }*/
 
-    const removeToCart=(itemToQuit,item, quantity)=>{
-        let inCart = cart.find((item) => item.id === itemToQuit.id)
-        if(inCart.quantity===1){
-            const cartWithoutItem = cart.filter((item)=>item.id !== itemToQuit.id)
-            console.log(cartWithoutItem)
-            setCart(cartWithoutItem)
-            
-        }else {
-            const cartWithLessItem= {...item, quantity:cart[inCart].quantity - quantity}  
-            
-            setCart([cartWithLessItem])
-            return 
-        }  
-                
-        console.log(inCart)
+    const removeToCart=(id)=>{
+        const removeItem=(cart.filter(item => item.id !== id))
+        setCart(removeItem)
     }
 
     let cantInCart= 0
@@ -83,7 +74,7 @@ const CartProvider = ({children}) => {
     })
 
     const valueToShare={
-        cart, isInCart, cleanCart, addToCart, removeToCart, cantInCart,
+        cart, isInCart, totalPrice, cleanCart, addToCart, removeToCart, cantInCart,
     }
 
     return(
@@ -93,4 +84,5 @@ const CartProvider = ({children}) => {
     )
 
 }
+
 export default CartProvider

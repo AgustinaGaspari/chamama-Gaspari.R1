@@ -4,7 +4,7 @@ import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
 
-const ItemCount =({initial, stock, onAdd})=>{
+const ItemCount =({initial, stock, onAdd, handleQuit})=>{
     
     const navigate = useNavigate()
     const [contador, setContador] = useState(initial)
@@ -28,6 +28,7 @@ const ItemCount =({initial, stock, onAdd})=>{
         navigate('/cart')
     }
     
+
     
 
     return(
@@ -40,7 +41,6 @@ const ItemCount =({initial, stock, onAdd})=>{
             </div>
             <div>
                 <Button variant="secondary" onClick={()=>onAdd(contador)}>Agregar al carrito</Button>
-
                 <Button variant="secondary" onClick={goToCart}>Finalizar Compra</Button>
             </div>
         </Stack>
