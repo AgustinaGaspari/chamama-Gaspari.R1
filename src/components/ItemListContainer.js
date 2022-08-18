@@ -2,21 +2,49 @@ import './ItemListContainer.css';
 //import ItemCount from './ItemCount';
 import { useEffect, useState} from 'react';
 import ItemList from './ItemList';
-import {data} from '../mock/Data';
+//import {data} from '../mock/Data';
 import {useParams} from "react-router-dom";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ItemListContainer=(props)=> {
     
     const [listaProductos, setListaProductos] = useState([])
-    
+
     const[mensaje, setMensaje] = useState(false)
     
     const [loading, setLoading] = useState(true)
     
-    const {category} = useParams();
+    const {id} = useParams();
 
-    
     useEffect(()=>{
+        
+        const db= getFirestore();
+    
+        const itemsCollection = collection(db,'items')
+        if(id){
+            
+            getDocs(query(itemsCollection, where('category', '==', id)))
+                .then((snapshot)=>{
+                setListaProductos(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id})))
+                   
+            })
+            .catch((error)=> console.error(error))
+            .finally(()=> setLoading(false))
+
+        } else{
+            getDocs(itemsCollection)
+                .then((snapshot)=>{
+                    setListaProductos(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id})))
+                    
+                })
+                .catch(()=> setMensaje(alert('Error, intente más tarde')))
+                .finally(()=> setLoading(false))
+        }
+    
+    },[id])
+
+
+    /*useEffect(()=>{
         console.log ('soy el use effect') 
         data
         .then((res)=> {
@@ -28,7 +56,7 @@ const ItemListContainer=(props)=> {
         })
         .catch((err)=> setMensaje(alert('Error, intente más tarde')))
         .finally(()=> setLoading(false))
-    },[category]);
+    },[category]);*/
   
 
     return(

@@ -1,13 +1,13 @@
 
 
-const productos = [
+/*const productos = [
     {id:'01', 
     name: 'Bolso CHA',
     category: 'bolsos', 
     description: 'Bolso Reciclado. Material: BLACKOUT y CÁMARA DE VEHICULOS. Costuras y correas reforzadas; bolsillo para celu y llaves.', 
     price: 4500, 
     stock: 10, 
-    img:'./img/BolsoBlackout.png'},
+    img:'/img/BolsoBlackout.png'},
 
     {id:'02', 
     name: 'Mochila MOMO',
@@ -80,4 +80,4 @@ export const data = new Promise((resolve, reject) =>{
     },2000)
 })
 
-
+*/

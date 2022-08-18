@@ -1,19 +1,31 @@
 import {useState, useEffect} from "react";
 import ItemDetail from './ItemDetail';
-import {data} from '../mock/Data';
+//import {data} from '../mock/Data';
 import './ItemDetailContainer.css';
 import {useParams} from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 const ItemDetailContainer = ()=>{
 
-    const [item, setItem]= useState()
-    const[mensaje, setMensaje] = useState(false)
+    const [item, setItem]= useState([])
     const [loading, setLoading] = useState(true)
     const {id} = useParams();
     
-   
-    useEffect(()=>{
+    useEffect(() => {
+        const db=getFirestore();
+
+        const productRef=doc(db, 'items', id);
+        getDoc(productRef).then((snapshot)=> {
+            setItem({...snapshot.data(), id: snapshot.id})
+        })
+        .catch((error)=> console.error(error))
+        .finally(()=> {setLoading(false)})
+
+    }, [id]);
+
+
+    /*useEffect(()=>{
         console.log ('soy el use effect') 
         data
         .then((res)=> {
@@ -21,7 +33,7 @@ const ItemDetailContainer = ()=>{
             })
         .catch(()=> setMensaje ('Error, intente más tarde'))
         .finally(()=> setLoading(false))
-    },[id]) ;
+    },[id]) ;*/
 
     return (
         <div>
