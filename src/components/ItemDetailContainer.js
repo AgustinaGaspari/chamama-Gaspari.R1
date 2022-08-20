@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail';
 //import {data} from '../mock/Data';
 import './ItemDetailContainer.css';
 import {useParams} from "react-router-dom";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, collection, getDoc, getFirestore } from "firebase/firestore";
 
 
 const ItemDetailContainer = ()=>{
@@ -15,9 +15,12 @@ const ItemDetailContainer = ()=>{
     useEffect(() => {
         const db=getFirestore();
 
-        const productRef=doc(db, 'items', id);
+        const collectionProducts = collection(db, "items")
+
+        const productRef=doc(collectionProducts, id);
+
         getDoc(productRef).then((snapshot)=> {
-            setItem({...snapshot.data(), id: snapshot.id})
+            setItem({id: snapshot.id, ...snapshot.data()})
         })
         .catch((error)=> console.error(error))
         .finally(()=> {setLoading(false)})

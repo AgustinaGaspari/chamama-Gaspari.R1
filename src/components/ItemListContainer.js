@@ -5,6 +5,7 @@ import ItemList from './ItemList';
 //import {data} from '../mock/Data';
 import {useParams} from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 const ItemListContainer=(props)=> {
     
@@ -20,24 +21,29 @@ const ItemListContainer=(props)=> {
         
         const db= getFirestore();
     
-        const itemsCollection = collection(db,'items')
+        const itemsCollection = collection(db,"items")
         if(id){
             
-            getDocs(query(itemsCollection, where('category', '==', id)))
+            getDocs(query(itemsCollection, where("category", "==", id)))
                 .then((snapshot)=>{
-                setListaProductos(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id})))
-                   
+                setListaProductos(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
+                  
             })
             .catch((error)=> console.error(error))
             .finally(()=> setLoading(false))
-
+            
         } else{
             getDocs(itemsCollection)
                 .then((snapshot)=>{
-                    setListaProductos(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id})))
+                    setListaProductos(snapshot.docs.map((product)=>({...product.data(), id: product.id})))
                     
                 })
-                .catch(()=> setMensaje(alert('Error, intente más tarde')))
+                .catch(()=> setMensaje(Swal.fire({
+                    icon:'error',
+                    text:'Error, intente más tarde',
+                    showConfirmButton: false,
+                    timer:2000,
+                })))
                 .finally(()=> setLoading(false))
         }
     

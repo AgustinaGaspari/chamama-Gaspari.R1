@@ -1,6 +1,6 @@
 
 
-const oneProduct = {
+/*const oneProduct = {
     id:'01', 
     name: 'Bolso CHA', 
     description: 'Bolso Reciclado. Material: BLACKOUT y CÁMARA DE VEHICULOS. Costuras y correas reforzadas; bolsillo para celu y llaves.', 
@@ -20,5 +20,4 @@ export const oneItem = new Promise((resolve, reject) =>{
             reject ('Error, algo salio mal')
         }
     },2000)
-})
-
+}) */

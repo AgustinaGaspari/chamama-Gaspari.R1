@@ -9,7 +9,7 @@ const ItemCart =({item})=>{
    
     return (
         <>
-            <h2>Mis Compras</h2>
+            
             <div>
             <h3 className="card-title" id= "titulo"> 
                 {item.name}

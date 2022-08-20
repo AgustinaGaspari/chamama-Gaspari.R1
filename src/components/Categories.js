@@ -9,11 +9,11 @@ export default function Categories () {
     useEffect(()=>{
         const db=getFirestore()
 
-        const categoriesCollection = collection(db, 'categories')
+        const categoriesCollection = collection(db, "categories");
 
         getDocs(categoriesCollection)
             .then((snapshot) =>{
-                setCategories(snapshot.docs.map((doc)=> doc.data().name))
+                setCategories(snapshot.docs.map((doc)=> doc.data().name));
 
             })
             .catch((error)=> console.error(error));
@@ -23,11 +23,10 @@ export default function Categories () {
     return(
         <>
             { categories.map((el)=>{
-                <Nav className='nav-item' key={el}>
-                    <Link to={'/category/'+ el}>
-                        {el.toUpperCase()}
-                    </Link>
-                </Nav>
+                <li className='nav-item' key={el}> 
+                    <Link to={'/category/'+ el}> {el.toUpperCase()}</Link>
+                    
+                </li>
                 })
             }
         </>

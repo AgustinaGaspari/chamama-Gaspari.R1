@@ -20,7 +20,7 @@ function BasicExample() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
-              <Categories />
+              <Categories /> 
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
