@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer greeting= 'BIENVENIDO A TIENDA CHAMAMA - REINVENTANDO LA BASURA'/>} />
             <Route path="/item/:id" element={<ItemDetailContainer/>} />
-            <Route path="/category/:category" element={<ItemListContainer/>} />
+            <Route path="/category/:id" element={<ItemListContainer/>} />
             <Route path="*" element={<ItemListContainer/>} />
             <Route path='/cart' element={<CartContainer/>} />
             <Route path='/checkout' element={<Checkout/>}/>
