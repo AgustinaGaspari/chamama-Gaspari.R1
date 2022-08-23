@@ -25,19 +25,19 @@ const ItemListContainer=(props)=> {
         if(id){
             
             getDocs(query(itemsCollection, where("category", "==", id)))
-                .then((snapshot)=>{
+                .then((snapshot)=>
                 setListaProductos(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
                   
-            })
+            )
             .catch((error)=> console.error(error))
             .finally(()=> setLoading(false))
             
         } else{
             getDocs(itemsCollection)
-                .then((snapshot)=>{
+                .then((snapshot)=>
                     setListaProductos(snapshot.docs.map((product)=>({...product.data(), id: product.id})))
                     
-                })
+                )
                 .catch(()=> setMensaje(Swal.fire({
                     icon:'error',
                     text:'Error, intente más tarde',

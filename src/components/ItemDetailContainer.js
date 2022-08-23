@@ -19,9 +19,9 @@ const ItemDetailContainer = ()=>{
 
         const productRef=doc(collectionProducts, id);
 
-        getDoc(productRef).then((snapshot)=> {
+        getDoc(productRef).then((snapshot)=> 
             setItem({id: snapshot.id, ...snapshot.data()})
-        })
+        )
         .catch((error)=> console.error(error))
         .finally(()=> {setLoading(false)})
 
