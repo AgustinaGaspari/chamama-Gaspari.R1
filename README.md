@@ -16,7 +16,7 @@
 
 ## Deployments
 
-- link pagina github deployada
+- https://agustinagaspari.github.io/chamama-Gaspari.R1/
 
 ## Available Scripts
 
@@ -54,5 +54,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Contact
 
-- GitHub:
 - Email: agusgaspari-5@hotmail.com
