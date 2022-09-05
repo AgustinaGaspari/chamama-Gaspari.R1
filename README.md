@@ -1,8 +1,8 @@
 # Ecommerce - CHAMAMA
 
-## Shopping store for design products and without gender, obtained from the recycling of rubber and blackout.
+## Store of design and genderless products, obtained from the recycling of rubber and blackout.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Buy Flow
 1. Product selection
@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 5. Checkout
 6. Order number
 
-- gif
+![](/Chamama.gif "")
 
 ## Deployments
 
@@ -40,7 +40,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Applied technologies
+## Applied Technologies
 
 - REACT JS
 - JAVASCRIPT
