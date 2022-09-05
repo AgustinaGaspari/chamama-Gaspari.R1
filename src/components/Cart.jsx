@@ -16,9 +16,7 @@ const ItemCart =({item})=>{
                 <p className="card-text"> Unidades: {item.quantity} </p>
                 <p className="card-text"> Subtotal: $ {item.quantity*item.price} </p>   
                 <CgTrash onClick={()=>removeToCart(item.id)}></CgTrash>   
-            </div>
-            
-            
+            </div>        
         </>
     );
 }

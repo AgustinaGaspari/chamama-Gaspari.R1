@@ -28,9 +28,7 @@ const Item = ({producto})=>{
                 <p className="card-text"> Precio: ${producto.price} </p>
                 <p className="card-text"> Unidades en stock: {producto.stock} </p>        
             </div>
-        
         </>    
-    
     )
 }
 

@@ -1,8 +1,6 @@
 import './ItemListContainer.css';
-//import ItemCount from './ItemCount';
 import { useEffect, useState} from 'react';
 import ItemList from './ItemList';
-//import {data} from '../mock/Data';
 import {useParams} from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import Swal from "sweetalert2";
@@ -48,21 +46,6 @@ const ItemListContainer=(props)=> {
         }
     
     },[id])
-
-
-    /*useEffect(()=>{
-        console.log ('soy el use effect') 
-        data
-        .then((res)=> {
-            if(category) {
-                setListaProductos(res.filter((product)=> product.category===category))
-            } else {
-                setListaProductos(res);
-            }
-        })
-        .catch((err)=> setMensaje(alert('Error, intente más tarde')))
-        .finally(()=> setLoading(false))
-    },[category]);*/
   
 
     return(
@@ -72,8 +55,6 @@ const ItemListContainer=(props)=> {
             {mensaje && <p>{mensaje}</p>}
             
             {loading ? <p>Cargando productos...</p> : <ItemList listaProductos={listaProductos}/>}
-
-            {/*<ItemCount initial={0} stock={30} onAdd={onAdd}/>*/}
             
         </div>
     )

@@ -1,5 +1,3 @@
-
-import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
@@ -8,7 +6,6 @@ import CartProvider from './context/CartContext';
 import { BrowserRouter } from 'react-router-dom';
 import CartContainer from './components/CartContainer';
 import Checkout from './components/Checkout';
-
 
 function App() {
 

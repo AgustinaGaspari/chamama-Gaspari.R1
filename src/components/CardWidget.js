@@ -14,8 +14,7 @@ const CardWidget =()=>{
         <>
         <BiCart/>
         <p>{valueToShare.cantInCart}</p>
-        </>
-       
+        </>  
     );
 }
 

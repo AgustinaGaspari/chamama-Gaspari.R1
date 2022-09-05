@@ -10,7 +10,6 @@ const ItemCount =({initial, stock, onAdd, handleQuit})=>{
     const navigate = useNavigate()
     const [contador, setContador] = useState(initial)
 
-
     console.log('me renderice')
 
     const sumar=()=>{
@@ -29,11 +28,8 @@ const ItemCount =({initial, stock, onAdd, handleQuit})=>{
         navigate('/cart')
     }
     
-
-    
-
     return(
-        <>
+        
         <Stack direction="vertical" gap={2} style={{alignSelf:'center'}}>
             <div className='countButton' >
                 <Button variant="outline-dark" disabled = {contador<=1} onClick={restar} > - </Button>
@@ -45,7 +41,6 @@ const ItemCount =({initial, stock, onAdd, handleQuit})=>{
                 <Button variant="outline-dark" onClick={goToCart}>Ver mi carrito</Button>
             </div>
         </Stack>
-        </>
         
     )
 }

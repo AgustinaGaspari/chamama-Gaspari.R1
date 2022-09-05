@@ -21,7 +21,7 @@ const CartContainer=()=>{
     } 
 
     return(
-        <>
+        
         <div>
             <h2 className='myCartTittle'>Mis Compras</h2>
             
@@ -33,8 +33,6 @@ const CartContainer=()=>{
                 <Button variant="outline-dark" onClick={()=>cleanCart()}>Vaciar Carrito</Button>
             </div>
         </div>
-        
-        </>
     )
 
 }

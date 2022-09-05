@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import ItemDetail from './ItemDetail';
-//import {data} from '../mock/Data';
 import './ItemDetail.css';
 import {useParams} from "react-router-dom";
 import { doc, collection, getDoc, getFirestore } from "firebase/firestore";
@@ -26,17 +25,6 @@ const ItemDetailContainer = ()=>{
         .finally(()=> {setLoading(false)})
 
     }, [id]);
-
-
-    /*useEffect(()=>{
-        console.log ('soy el use effect') 
-        data
-        .then((res)=> {
-                setItem(res.find((product)=> product.id===id))    
-            })
-        .catch(()=> setMensaje ('Error, intente más tarde'))
-        .finally(()=> setLoading(false))
-    },[id]) ;*/
 
     return (
         <div className="contDetail">

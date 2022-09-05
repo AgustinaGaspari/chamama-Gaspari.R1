@@ -57,10 +57,6 @@ const CartProvider = ({children}) => {
         )
     }
 
-   /* const totalProducts = ()=>{
-        cart.reduce((accum, itemAct)=> accum + itemAct.quantity, 0)
-    }*/
-
     const removeToCart=(id)=>{
         const removeItem=(cart.filter(item => item.id !== id))
         setCart(removeItem)
