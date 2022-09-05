@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
+import './ItemCount.css'
 
 
 const ItemCount =({initial, stock, onAdd, handleQuit})=>{
@@ -34,14 +35,14 @@ const ItemCount =({initial, stock, onAdd, handleQuit})=>{
     return(
         <>
         <Stack direction="vertical" gap={2} style={{alignSelf:'center'}}>
-            <div >
-                <Button variant="outline-secondary" disabled = {contador<=1} onClick={restar} > - </Button>
+            <div className='countButton' >
+                <Button variant="outline-dark" disabled = {contador<=1} onClick={restar} > - </Button>
                 <span className="numContador"> {contador} </span>
-                <Button variant="outline-secondary" disabled = {contador>=stock} onClick={sumar} > + </Button>
+                <Button variant="outline-dark" disabled = {contador>=stock} onClick={sumar} > + </Button>
             </div>
-            <div>
-                <Button variant="secondary" onClick={()=>onAdd(contador)}>Agregar al carrito</Button>
-                <Button variant="secondary" onClick={goToCart}>Ver mi carrito</Button>
+            <div className='buyButton'>
+                <Button variant="outline-dark" onClick={()=>onAdd(contador)}>Agregar al carrito</Button>
+                <Button variant="outline-dark" onClick={goToCart}>Ver mi carrito</Button>
             </div>
         </Stack>
         </>

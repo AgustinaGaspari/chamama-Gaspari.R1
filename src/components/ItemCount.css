@@ -1,0 +1,23 @@
+/*CSS DE ITEM-COUNT*/
+
+.countButton{
+    text-align: center;
+    font-weight: bold;
+    font-size:20px;
+    background-color:#f6d74f;
+    color: black;
+    border:none; 
+    border-radius:10px; 
+    padding:5px;   
+}
+
+.buyButton{
+    text-align: center;
+    font-weight: bold;
+    font-size:20px;
+    background-color:#f6d74f;
+    color: black; 
+    border-radius:10px; 
+    padding:5px; 
+    
+}

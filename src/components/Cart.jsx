@@ -1,29 +1,23 @@
 import React, {useContext} from 'react'
 import { CartContext } from '../context/CartContext';
-
-
+import {CgTrash} from 'react-icons/cg';
+import './Cart.css';
 
 const ItemCart =({item})=>{
     const {removeToCart} = useContext (CartContext);
-
    
     return (
         <>
-            
-            <div>
-                <h3 className="card-title" id= "titulo"> 
+            <div className='itemCart'>
+                <p className="card-title" > 
                     {item.name}
-                </h3>  
-                <p className="card-text" id="description"> 
-                    Descripción: {item.description} 
-                </p>
-                <img src={item.img} className= "car-img-top img-fluid" alt={item.name}/>
+                </p>  
                 <p className="card-text"> Precio: $ {item.price} </p>
                 <p className="card-text"> Unidades: {item.quantity} </p>
                 <p className="card-text"> Subtotal: $ {item.quantity*item.price} </p>   
+                <CgTrash onClick={()=>removeToCart(item.id)}></CgTrash>   
             </div>
             
-            <button onClick={()=>removeToCart(item.id)}>Eliminar</button>
             
         </>
     );

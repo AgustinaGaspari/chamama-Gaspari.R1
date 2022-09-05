@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import ItemDetail from './ItemDetail';
 //import {data} from '../mock/Data';
-import './ItemDetailContainer.css';
+import './ItemDetail.css';
 import {useParams} from "react-router-dom";
 import { doc, collection, getDoc, getFirestore } from "firebase/firestore";
 
@@ -39,8 +39,8 @@ const ItemDetailContainer = ()=>{
     },[id]) ;*/
 
     return (
-        <div>
-            <h1 id="detail">DETALLE DE PRODUCTO</h1>
+        <div className="contDetail">
+            <h1 id="detail">Detalle de Producto</h1>
             {item && <ItemDetail item={item}/>}
         </div>
     )

@@ -1,0 +1,14 @@
+/*CSS CART*/
+
+.itemCart {
+    margin-top: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+    margin: 2 rem auto;
+    background-color:#f6d74f;
+    text-align: center;
+    padding-top: 10px;
+}
+

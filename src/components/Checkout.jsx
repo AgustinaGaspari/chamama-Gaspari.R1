@@ -5,6 +5,8 @@ import {getFirestore } from "firebase/firestore";
 import { CartContext } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom'
 import Swal from "sweetalert2";
+import Button from 'react-bootstrap/Button'
+import './CheckOut.css'
 
 const Checkout=()=>{
    
@@ -57,19 +59,19 @@ const Checkout=()=>{
     return(
         <>
            {!orderId  ?
-                <div>
-                    <h2>Completa tus datos para finalizar la compra</h2>
-                    <form onSubmit={finalizarCompra}>
-                        <input type="text" placeholder='Nombre Completo' name='name'onChange={datosComprador}/>
-                        <input type="number" placeholder='Número de teléfono' name='telefone' onChange={datosComprador} />
-                        <input type="email" placeholder='mail@mail.com' name='email'onChange={datosComprador}/>
-                        <button type='submit'>Comprar</button>
+                <div className="formulary">
+                    <h2 className="formTittle" >Completa tus datos para finalizar la compra</h2>
+                    <form onSubmit={finalizarCompra} className="formInputs">
+                        <input className="formInputs1" type="text" placeholder='Nombre Completo' name='name'onChange={datosComprador}/>
+                        <input className="formInputs1" type="number" placeholder='Número de teléfono' name='telefone' onChange={datosComprador} />
+                        <input className="formInputs1" type="email" placeholder='mail@mail.com' name='email'onChange={datosComprador}/>
+                        <Button variant="outline-dark" type='submit'>Comprar</Button>
                     </form>
                 </div>
-                :   <div>
-                        <h2>MUCHAS GRACIAS POR SU COMPRA!</h2>
+                :   <div className="bye">
+                        <h2>¡MUCHAS GRACIAS POR SU COMPRA!</h2>
                         <h3>Su orden es: {orderId}</h3>
-                        <button onClick={backHome}>Volver a la tienda</button>
+                        <Button variant="outline-dark" onClick={backHome}>Volver a la tienda</Button>
                     </div>}
             
         </>

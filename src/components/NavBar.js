@@ -14,7 +14,7 @@ function BasicExample() {
     <Navbar bg="light" expand="lg" className="menu">
       <Container className="contenedor">
         <Navbar.Brand className="tienda">
-          <Link to={"/"}>TIENDA CHAMAMA</Link> 
+          <Link to={"/"} style={{color:'black'}}>TIENDA CHAMAMA</Link> 
         </Navbar.Brand>
         
         <Navbar.Collapse id="basic-navbar-nav">
@@ -24,7 +24,7 @@ function BasicExample() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Link to={"/cart"}><CardWidget id="carrito"/> </Link>
+        <Link to={"/cart"} style={{color:'black', display:'flex'}}><CardWidget id="carrito"/> </Link>
       </Container>
       
     </Navbar>

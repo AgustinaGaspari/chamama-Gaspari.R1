@@ -1,9 +1,11 @@
+/*CSS DE ITEM-LIST-CONTAINER*/
 
 .saludar {
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
     margin:10px;
+    text-align: center;
     
 }
 
@@ -13,18 +15,18 @@
     border: 5px solid #fcd116;
     border-radius: 10px;
 }
-#buy{
-    margin-top:10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-#less {
-    margin-right: 10px;
-    margin-top: 20px;    
-    border-radius: 5px;
+
+/*CSS DE ITEM-LIST*/
+
+.itemsStyle{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items:center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 3px solid #fcd116;
+    border-radius: 10px;
 }
 
-#plus {
-    margin-left: 10px;
-    border-radius: 5px;
-}
+
+

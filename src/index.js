@@ -8,12 +8,12 @@ import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCntDuXg0D68Vf4gLX1ydpa9KHKBssrfMs",
-    authDomain: "chamama-409fd.firebaseapp.com",
-    projectId: "chamama-409fd",
-    storageBucket: "chamama-409fd.appspot.com",
-    messagingSenderId: "10157489211",
-    appId: "1:10157489211:web:b204dcbd094a985316701e"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain:  process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
 };
 
 initializeApp(firebaseConfig);

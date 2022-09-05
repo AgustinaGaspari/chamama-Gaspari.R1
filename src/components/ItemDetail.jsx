@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { CartContext } from '../context/CartContext';
 import ItemCount from "./ItemCount";
+import './ItemDetail.css';
 
 
 const ItemDetail =({item})=>{
@@ -31,7 +32,7 @@ const ItemDetail =({item})=>{
     }, [count])
 
     return(
-        <div>
+        <div id="containerDetail" className='cardDetail'>
             <h3 className="card-title" id= "titulo"> 
                 {name}
             </h3>  

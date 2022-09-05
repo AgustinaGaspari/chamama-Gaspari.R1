@@ -1,0 +1,32 @@
+/*CSS CHECKOUT*/
+
+.formulary {
+    text-align: center;
+}
+
+.formTittle{
+    margin-top: 10px;
+    font-family:'Calibri', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+.formInputs{
+    display: flex;
+    justify-content: center;
+}
+.formInputs1{
+    margin:10px;
+}
+
+.bye{
+    margin-top: 20px;
+    font-family:'Calibri', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}

@@ -24,7 +24,7 @@ export default function Categories () {
         <>
             { categories.map((el)=>
                 <li className='nav-item' key={el}> 
-                    <Link to={'/category/'+ el}> {el.toUpperCase()}</Link>
+                    <Link to={'/category/'+ el} style={{color:'black', padding:'20px', textDecoration:'none'}}> {el.toUpperCase()}</Link>
                 </li>
                 )
             }

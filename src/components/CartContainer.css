@@ -1,0 +1,27 @@
+/*CSS DE CART CONTAINER*/
+
+.emptyCart{
+    text-align: center;
+    font-size: 20px;    
+    margin-top: 50px;
+}
+
+.myCartTittle {
+    margin-top: 10px;
+    font-family:'Calibri', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    text-decoration: underline;
+}
+.totalBuy{
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 200px;
+    font-size: 20px;
+}
+.buttons{
+    text-align: center;
+}
+
+
